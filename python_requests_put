@@ -1,0 +1,21 @@
+import requests
+url="https://fakerestapi.azurewebsites.net/api/v1/Activities/125"
+
+headers={
+    'Accept':'text/plain',
+    'content=Type':'application\json'
+}
+
+body={
+  "id": 125,
+  "title": "test from python sp",
+  "dueDate": "2025-03-17T01:54:58.315Z",
+  "completed": True
+}
+
+print(requests.get("https://fakerestapi.azurewebsites.net/api/v1/Activities/125",headers=headers))
+
+
+response=requests.put(url,json=body)
+
+print(response.status_code)
